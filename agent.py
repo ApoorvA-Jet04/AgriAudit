@@ -68,11 +68,20 @@ def process_audit(tender_pdf_path, bid_pdf_path):
             f"VENDOR BID:\n{bid_text}"
         )
 
-        # Call Gemini model
-        model = genai.GenerativeModel(model_name='gemini-1.5-flash')
+        # Call Gemini model with fallback support
+        def call_gemini_with_fallback(model_name):
+            model = genai.GenerativeModel(model_name=model_name)
+            return model.generate_content(prompt)
 
         def call_gemini():
-            return model.generate_content(prompt)
+            try:
+                return call_gemini_with_fallback('gemini-1.5-flash')
+            except Exception as e:
+                err_str = str(e).lower()
+                if "404" in err_str or "not found" in err_str or "not supported" in err_str:
+                    print("gemini-1.5-flash not supported on this project. Falling back to gemini-2.5-flash...")
+                    return call_gemini_with_fallback('gemini-2.5-flash')
+                raise
 
         try:
             response = call_gemini()
