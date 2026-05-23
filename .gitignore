@@ -36,3 +36,8 @@ ENV/
 
 # Streamlit
 .streamlit/
+
+# Runtime / generated data
+chroma_db/
+uploads/
+*.log

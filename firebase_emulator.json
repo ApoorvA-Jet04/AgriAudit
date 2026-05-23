@@ -7,7 +7,7 @@
       "role": "Procurement Officer",
       "two_factor_enabled": true,
       "created_at": "2026-05-23T01:14:35.850941",
-      "last_login": "2026-05-23T03:08:21.722575",
+      "last_login": "2026-05-23T03:31:48.067673",
       "failed_attempts": 0,
       "lockout_until": 0
     },
@@ -232,12 +232,39 @@
       "failed_attempts": 0,
       "device_info": "Web Browser",
       "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T03:19:42.667215",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T03:24:35.524054",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T03:31:48.072300",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
     }
   ],
   "otps": {
     "officer@agriaudit.gov": {
-      "code": "723783",
-      "expiry": 1779531010,
+      "code": "255421",
+      "expiry": 1779532421,
       "used": true
     },
     "auditor@agriaudit.gov": {
