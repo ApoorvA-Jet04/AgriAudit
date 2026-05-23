@@ -68,8 +68,8 @@ def process_audit(tender_pdf_path, bid_pdf_path):
             f"VENDOR BID:\n{bid_text}"
         )
 
-        # Call Gemini model with 429 retry logic
-        model = genai.GenerativeModel(model_name='gemini-1.5-flash-latest')
+        # Call Gemini model
+        model = genai.GenerativeModel(model_name='gemini-1.5-flash')
 
         def call_gemini():
             return model.generate_content(prompt)
@@ -78,8 +78,8 @@ def process_audit(tender_pdf_path, bid_pdf_path):
             response = call_gemini()
         except Exception as quota_err:
             if "429" in str(quota_err) or "RESOURCE_EXHAUSTED" in str(quota_err):
-                print("Quota limit hit, retrying in 10 seconds...")
-                time.sleep(10)
+                print("Quota limit hit, retrying in 15 seconds...")
+                time.sleep(15)
                 response = call_gemini()
             else:
                 raise
@@ -102,7 +102,13 @@ def process_audit(tender_pdf_path, bid_pdf_path):
         return result_dict
 
     except Exception as e:
-        return {'status': 'error', 'message': str(e)}
+        error_msg = str(e)
+        if "429" in error_msg or "RESOURCE_EXHAUSTED" in error_msg:
+            return {
+                'status': 'error',
+                'message': 'System busy due to high traffic. Please wait 30 seconds and click Run Audit again.'
+            }
+        return {'status': 'error', 'message': error_msg}
 
 
 def audit_procurement(tender_file, vendor_file):
