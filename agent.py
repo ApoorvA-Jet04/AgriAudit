@@ -1,8 +1,8 @@
 import os
 import json
+import time
 import PyPDF2
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -46,8 +46,8 @@ def process_audit(tender_pdf_path, bid_pdf_path):
                 "key_findings": []
             }
 
-        # Configure Google GenAI Client
-        client = genai.Client(api_key=api_key)
+        # Configure Google GenerativeAI
+        genai.configure(api_key=api_key)
 
         # Extract text from PDFs
         tender_text = extract_text_from_pdf(tender_pdf_path)
@@ -58,7 +58,7 @@ def process_audit(tender_pdf_path, bid_pdf_path):
         if not bid_text.strip():
             raise ValueError("Vendor Bid PDF is empty or could not be read.")
 
-        # Construct prompt exactly as instructed
+        # Construct prompt
         prompt = (
             "You are an impartial agricultural auditor. Compare the required specifications in the Tender Document "
             "against the offered specifications in the Vendor Bid. Return ONLY a valid JSON object with these exact keys: "
@@ -68,14 +68,21 @@ def process_audit(tender_pdf_path, bid_pdf_path):
             f"VENDOR BID:\n{bid_text}"
         )
 
-        # Call Gemini model ensuring structured JSON output
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
-        )
+        # Call Gemini model with 429 retry logic
+        model = genai.GenerativeModel(model_name='gemini-1.5-flash-latest')
+
+        def call_gemini():
+            return model.generate_content(prompt)
+
+        try:
+            response = call_gemini()
+        except Exception as quota_err:
+            if "429" in str(quota_err) or "RESOURCE_EXHAUSTED" in str(quota_err):
+                print("Quota limit hit, retrying in 10 seconds...")
+                time.sleep(10)
+                response = call_gemini()
+            else:
+                raise
 
         # Parse and return JSON response
         result_text = response.text
