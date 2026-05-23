@@ -1,0 +1,249 @@
+{
+  "users": {
+    "officer@agriaudit.gov": {
+      "uid": "uid_procurement_officer_901",
+      "email": "officer@agriaudit.gov",
+      "password": "password123",
+      "role": "Procurement Officer",
+      "two_factor_enabled": true,
+      "created_at": "2026-05-23T01:14:35.850941",
+      "last_login": "2026-05-23T03:08:21.722575",
+      "failed_attempts": 0,
+      "lockout_until": 0
+    },
+    "auditor@agriaudit.gov": {
+      "uid": "uid_auditor_402",
+      "email": "auditor@agriaudit.gov",
+      "password": "password123",
+      "role": "Auditor",
+      "two_factor_enabled": true,
+      "created_at": "2026-05-23T01:14:35.850946",
+      "last_login": "2026-05-23T02:08:36.119504",
+      "failed_attempts": 0,
+      "lockout_until": 0
+    },
+    "admin@agriaudit.gov": {
+      "uid": "uid_admin_707",
+      "email": "admin@agriaudit.gov",
+      "password": "password123",
+      "role": "Admin",
+      "two_factor_enabled": true,
+      "created_at": "2026-05-23T01:14:35.850948",
+      "last_login": null,
+      "failed_attempts": 0,
+      "lockout_until": 0
+    }
+  },
+  "auth_logs": [
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T01:14:35.855070",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T01:16:21.012938",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T01:18:15.932185",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "shr@agriaudit.gov",
+      "login_time": "2026-05-23T01:46:09.264693",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "shr@agriaudit.gov",
+      "login_time": "2026-05-23T01:46:17.595604",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "shr@agriaudit.gov",
+      "login_time": "2026-05-23T01:46:21.325643",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "shr@agriaudit.gov",
+      "login_time": "2026-05-23T01:46:28.025883",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T01:48:13.502140",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:01:32.264629",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:01:42.220532",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "auditor@agriaudit.gov",
+      "login_time": "2026-05-23T02:08:01.453905",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "auditor@agriaudit.gov",
+      "login_time": "2026-05-23T02:08:10.015302",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "auditor@agriaudit.gov",
+      "login_time": "2026-05-23T02:08:36.124021",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:13:05.974868",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:22:04.041655",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:22:35.983624",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:30:31.660623",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:39:49.498936",
+      "ip_address": "127.0.0.1",
+      "otp_verified": false,
+      "failed_attempts": 1,
+      "device_info": "Web Browser",
+      "status": "FAILED"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:40:00.017204",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:47:22.584782",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T02:59:46.405616",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    },
+    {
+      "email": "officer@agriaudit.gov",
+      "login_time": "2026-05-23T03:08:21.725428",
+      "ip_address": "127.0.0.1",
+      "otp_verified": true,
+      "failed_attempts": 0,
+      "device_info": "Web Browser",
+      "status": "SUCCESS"
+    }
+  ],
+  "otps": {
+    "officer@agriaudit.gov": {
+      "code": "723783",
+      "expiry": 1779531010,
+      "used": true
+    },
+    "auditor@agriaudit.gov": {
+      "code": "709333",
+      "expiry": 1779527426,
+      "used": true
+    }
+  }
+}
